@@ -8,3 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'productDetails';
 }
+var age:number=20;
+console.log(age);
