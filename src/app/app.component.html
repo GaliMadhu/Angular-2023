@@ -1,9 +1,25 @@
 
-{{title}}
+<form #myForm="ngForm">
+      FirstName: <input type="text" 
+          [(ngModel)]="fname" 
+          name="fname" required="required"
+           #control1="ngModel"/>
 
-<form name="myform">
-      FirstName: <input type="text" name="fname" required>
-      LastName: <input type="text" name="lname" required>
-          <input type="submit" (click)= saveForm(myform)>
+           <span class="error" *ngIf="control1.touched && control1.invalid&&control1.errors">
+            FirstName Cant be Empty
+           </span> <br/>
+      LastName: <input type="text"  
+            [(ngModel)]="lname" name="lname" required="required" #control2="ngModel"/>
+           
+      <span class="error" *ngIf="control2.touched && control2.invalid&&control2.errors">
+        LastName Cant be Empty
+       </span> <br/>
+      Email: <input type="text" [(ngModel)] ="email" name="eamil" required="required"  #control3="ngModel"/>
+      <span class="error" *ngIf="control3.touched && control3.invalid&&control3.errors">
+        Email Cant be Empty
+       </span> <br/>
+          <input type="submit"  value="save" (click)= "saveUser()">
+
+          <div>{{mas}}</div>
 
 </form>

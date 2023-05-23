@@ -6,7 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'productDetails';
+  
+  fname:string="";
+  lname:string="";
+  email:string="";
+  mas:string="";
+   
+  saveUser( ){
+  
+    this.mas="Data Save sucessfully";
+  }
 }
-var age:number=20;
-console.log(age);
+
